@@ -1,0 +1,238 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Ecohygiene design tokens
+   Palette: carbon (industrial black) / moss (eco green) / hydro (water blue)
+   Kept deep and desaturated so the brand reads premium-industrial rather
+   than "generic eco template".
+   ========================================================================== */
+
+@theme {
+  --font-display: var(--font-sora), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono-tech), ui-monospace, SFMono-Regular, monospace;
+
+  /* Industrial black — a hint of green in the shadows */
+  --color-carbon-950: #05090a;
+  --color-carbon-900: #090f10;
+  --color-carbon-850: #0d1517;
+  --color-carbon-800: #121c1e;
+  --color-carbon-700: #1b2729;
+  --color-carbon-600: #2a3a3c;
+  --color-carbon-500: #405254;
+  --color-carbon-400: #647b7d;
+  --color-carbon-300: #97acad;
+  --color-carbon-200: #c6d3d3;
+  --color-carbon-100: #e3eae9;
+  --color-carbon-50: #f2f6f5;
+
+  /* Moss — sustainability */
+  --color-moss-50: #ecfbf3;
+  --color-moss-100: #cff3e2;
+  --color-moss-200: #a1e6c6;
+  --color-moss-300: #66d2a3;
+  --color-moss-400: #2fb87f;
+  --color-moss-500: #119b66;
+  --color-moss-600: #0a7c52;
+  --color-moss-700: #096242;
+  --color-moss-800: #094c35;
+  --color-moss-900: #073829;
+
+  /* Hydro — water, trust, cleanliness */
+  --color-hydro-50: #ebf6fc;
+  --color-hydro-100: #cfe9f8;
+  --color-hydro-200: #a1d4f0;
+  --color-hydro-300: #66b8e2;
+  --color-hydro-400: #2f97cf;
+  --color-hydro-500: #0f77b0;
+  --color-hydro-600: #0b5d8c;
+  --color-hydro-700: #0b4970;
+  --color-hydro-800: #0a3958;
+  --color-hydro-900: #072940;
+
+  --shadow-lift: 0 1px 2px rgb(5 9 10 / 0.04), 0 12px 32px -12px rgb(5 9 10 / 0.18);
+  --shadow-lift-lg: 0 2px 4px rgb(5 9 10 / 0.05), 0 32px 64px -24px rgb(5 9 10 / 0.28);
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --header-h: 4.5rem;
+    scroll-padding-top: calc(var(--header-h) + 1rem);
+  }
+
+  * {
+    border-color: --alpha(var(--color-carbon-900) / 10%);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-carbon-50);
+    color: var(--color-carbon-900);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* One consistent, visible focus ring on both light and dark surfaces. */
+  :focus-visible {
+    outline: 2px solid var(--color-moss-400);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-moss-300);
+    color: var(--color-carbon-950);
+  }
+}
+
+@layer components {
+  /* Section eyebrow: small technical label used above headings */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+  }
+
+  /* Hairline grid used on dark sections — reads as an engineering drawing */
+  .bg-blueprint {
+    background-image:
+      linear-gradient(to right, rgb(255 255 255 / 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(255 255 255 / 0.04) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .bg-blueprint-light {
+    background-image:
+      linear-gradient(to right, rgb(5 9 10 / 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(5 9 10 / 0.045) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  /* Soft green→blue wash behind hero and CTA bands */
+  .bg-aurora {
+    background-image:
+      radial-gradient(60% 55% at 12% 8%, rgb(17 155 102 / 0.28) 0%, transparent 60%),
+      radial-gradient(55% 60% at 88% 20%, rgb(15 119 176 / 0.26) 0%, transparent 62%),
+      radial-gradient(70% 60% at 50% 110%, rgb(9 124 82 / 0.18) 0%, transparent 60%);
+  }
+
+  .text-gradient {
+    background-image: linear-gradient(
+      100deg,
+      var(--color-moss-300) 0%,
+      var(--color-moss-200) 35%,
+      var(--color-hydro-300) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+}
+
+@layer components {
+  /* Illustration motion — CSS-driven so prefers-reduced-motion can stop it. */
+  @keyframes eh-flow {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes eh-pulse-fill {
+    0%,
+    100% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.62;
+    }
+  }
+
+  @keyframes eh-swell {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(3px);
+    }
+  }
+
+  .flow-fast {
+    stroke-dasharray: 10 16;
+    stroke-dashoffset: 52;
+    animation: eh-flow 2.6s linear infinite;
+  }
+
+  .flow-slow {
+    stroke-dasharray: 14 20;
+    stroke-dashoffset: 68;
+    animation: eh-flow 3.4s linear infinite;
+  }
+
+  .pulse-fill {
+    opacity: 0.45;
+    animation: eh-pulse-fill 3s ease-in-out infinite;
+  }
+
+  .swell {
+    animation: eh-swell 7s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  /* Scroll-reveal primitive. Elements are only hidden once JS has marked the
+     document ready, so visitors without JS always see the content. */
+  [data-reveal-ready="true"] .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition:
+      opacity 0.7s var(--ease-out-quint),
+      transform 0.7s var(--ease-out-quint);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+
+  [data-reveal-ready="true"] .reveal[data-visible="true"] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  [data-reveal-ready="true"] .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
