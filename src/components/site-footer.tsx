@@ -13,23 +13,15 @@ export function SiteFooter() {
       <Container className="relative">
         <div className="grid gap-12 border-b border-white/10 py-16 lg:grid-cols-12 lg:gap-8 lg:py-20">
           <div className="lg:col-span-4">
-            <Link href="/" className="flex items-center gap-3" aria-label={`${site.shortName} — home`}>
+            <Link href="/" className="inline-flex" aria-label={`${site.name} — home`}>
               <Image
                 src="/logos/logo.png"
                 alt=""
                 aria-hidden
                 width={234}
                 height={231}
-                className="size-11 shrink-0 object-contain"
+                className="size-14 shrink-0 object-contain"
               />
-              <span className="leading-tight">
-                <span className="block font-display text-lg font-semibold tracking-tight text-white">
-                  ECOHYGIENE
-                </span>
-                <span className="block font-mono text-[0.625rem] tracking-[0.2em] text-carbon-300 uppercase">
-                  Company Limited
-                </span>
-              </span>
             </Link>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-carbon-300">
               {site.longDescription}

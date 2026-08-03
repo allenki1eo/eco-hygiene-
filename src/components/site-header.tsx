@@ -87,11 +87,7 @@ export function SiteHeader() {
         )}
       >
         <Container className="flex h-18 items-center justify-between gap-6">
-          <Link
-            href="/"
-            className="flex items-center gap-3"
-            aria-label={`${site.shortName} — home`}
-          >
+          <Link href="/" className="flex items-center" aria-label={`${site.name} — home`}>
             <Image
               src="/logos/logo.png"
               alt=""
@@ -99,16 +95,8 @@ export function SiteHeader() {
               width={234}
               height={231}
               priority
-              className="size-10 shrink-0 object-contain"
+              className="size-12 shrink-0 object-contain"
             />
-            <span className="leading-tight whitespace-nowrap">
-              <span className="block font-display text-[1.0625rem] font-semibold tracking-tight text-carbon-900">
-                ECOHYGIENE
-              </span>
-              <span className="block font-mono text-[0.625rem] tracking-[0.2em] text-carbon-500 uppercase">
-                Company Limited
-              </span>
-            </span>
           </Link>
 
           <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
