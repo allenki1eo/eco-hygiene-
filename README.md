@@ -50,7 +50,6 @@ src/
     sections.tsx              Service cards, stats, partners, CTA band, page hero
     ui.tsx                    Container, buttons, section headings, Reveal
     contact-form.tsx          Validated contact form (client component)
-    plant-illustration.tsx    Hero illustration (hand-drawn SVG)
     map-embed.tsx             OpenStreetMap embed with fallback
     icons.tsx                 Icon set
     reveal.tsx                Scroll-reveal observer
@@ -102,14 +101,18 @@ under `prefers-reduced-motion`.
 
 ### Imagery
 
-The hero is a hand-drawn SVG of a beverage plant — process tanks, filling line and
-the effluent path beneath the floor — rather than stock photography. It carries the
-brand palette exactly and weighs a few kilobytes.
+Every page hero is a full-bleed photograph under a flat 78% carbon wash. The home
+page uses the conveyor spray-down (`/services/factory-general-cleaning.jpg`); the
+inner pages use the banners and service photos described below.
 
-**To use real photography in the hero instead:** drop an optimised image in
-`public/`, replace `<PlantIllustration />` in `src/app/page.tsx` with `next/image`,
-and set explicit `width`/`height` plus a descriptive `alt`. Keep the dark overlay so
-the headline retains its contrast ratio.
+**Resolution is the weak point.** The supplied photos are 474-1008px wide, so at
+hero scale on a large monitor they are visibly soft. The dark wash hides most of
+it. Replacing any of them with a 2000px+ original is a drop-in swap: same path,
+no code change. That is the single highest-value improvement left on this site.
+
+An earlier version of the home hero used a hand-drawn SVG of a beverage plant
+(`components/plant-illustration.tsx`). It was removed when the photo went in; it
+is recoverable from git history if a sharp, weightless hero is ever wanted back.
 
 The company logo is `public/logos/logo.png`, used in the header, the footer and
 the social card, and as the favicon (`src/app/icon.png`). It was supplied as a

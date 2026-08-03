@@ -1,7 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/lib/services";
 import { complianceNotes, contact, guarantees } from "@/lib/site";
-import { PlantIllustration } from "@/components/plant-illustration";
 import {
   CheckList,
   CtaBand,
@@ -43,11 +43,24 @@ export default function HomePage() {
     <>
       {/* ---------------------------------------------------------------- Hero */}
       <section className="relative isolate overflow-hidden bg-carbon-950">
-        <div aria-hidden className="absolute inset-0 bg-blueprint opacity-60" />
+        {/* Full-bleed banner, matching every other page hero. */}
+        <Image
+          src="/services/factory-general-cleaning.jpg"
+          alt=""
+          aria-hidden
+          fill
+          priority
+          sizes="100vw"
+          className="-z-20 object-cover"
+        />
+        {/* Flat wash, no gradient. Heavy enough that the copy clears AA over
+            the brightest part of the photograph. */}
+        <div aria-hidden className="absolute inset-0 -z-10 bg-carbon-950/78" />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-blueprint opacity-40" />
 
         <Container className="relative">
-          <div className="grid items-center gap-14 py-16 sm:py-20 lg:grid-cols-12 lg:gap-8 lg:py-24">
-            <div className="lg:col-span-6 xl:col-span-5">
+          <div className="grid gap-14 py-20 sm:py-24 lg:grid-cols-12 lg:gap-8 lg:py-32">
+            <div className="lg:col-span-8">
               <Reveal>
                 <h1 className="text-4xl leading-[1.04] text-white sm:text-5xl xl:text-[3.75rem]">
                   Hygiene standards your{" "}
@@ -57,7 +70,7 @@ export default function HomePage() {
               </Reveal>
 
               <Reveal delay={80}>
-                <p className="mt-7 max-w-xl text-lg leading-relaxed text-carbon-300">
+                <p className="mt-7 max-w-xl text-lg leading-relaxed text-carbon-200">
                   Ecohygiene keeps Tanzanian beverage and manufacturing plants clean, pest-free
                   and compliant, from the filling hall floor to the water that leaves your
                   site. Eco-friendly by specification, industrial by standard.
@@ -83,23 +96,13 @@ export default function HomePage() {
                     { term: "Chemistry", detail: "Biodegradable first" },
                   ].map((item) => (
                     <div key={item.term}>
-                      <dt className="eyebrow text-carbon-300">{item.term}</dt>
+                      <dt className="eyebrow text-carbon-200">{item.term}</dt>
                       <dd className="mt-2 text-sm font-medium text-white">{item.detail}</dd>
                     </div>
                   ))}
                 </dl>
               </Reveal>
             </div>
-
-            <Reveal delay={200} className="lg:col-span-6 lg:col-start-7 xl:col-span-7">
-              <div className="relative">
-                <div
-                  aria-hidden
-                  className="absolute -inset-x-6 -inset-y-10 rounded-[3rem] bg-white/[0.03] ring-1 ring-white/10 backdrop-blur-[2px]"
-                />
-                <PlantIllustration className="relative" />
-              </div>
-            </Reveal>
           </div>
         </Container>
       </section>
