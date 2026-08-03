@@ -49,24 +49,14 @@ export default function HomePage() {
           <div className="grid items-center gap-14 py-16 sm:py-20 lg:grid-cols-12 lg:gap-8 lg:py-24">
             <div className="lg:col-span-6 xl:col-span-5">
               <Reveal>
-                <span className="inline-flex items-center gap-2.5 rounded-full border border-moss-400/25 bg-moss-400/10 px-4 py-1.5">
-                  <span aria-hidden className="size-1.5 rounded-full bg-moss-400" />
-                  <span className="eyebrow text-moss-300">
-                    Eco-friendly industrial hygiene
-                    <span className="max-sm:hidden"> · Shinyanga</span>
-                  </span>
-                </span>
-              </Reveal>
-
-              <Reveal delay={80}>
-                <h1 className="mt-7 text-4xl leading-[1.04] text-white sm:text-5xl xl:text-[3.75rem]">
+                <h1 className="text-4xl leading-[1.04] text-white sm:text-5xl xl:text-[3.75rem]">
                   Hygiene standards your{" "}
                   <span className="text-gradient">production line</span> can be
                   audited against.
                 </h1>
               </Reveal>
 
-              <Reveal delay={160}>
+              <Reveal delay={80}>
                 <p className="mt-7 max-w-xl text-lg leading-relaxed text-carbon-300">
                   Ecohygiene keeps Tanzanian beverage and manufacturing plants clean, pest-free
                   and compliant, from the filling hall floor to the water that leaves your
@@ -74,7 +64,7 @@ export default function HomePage() {
                 </p>
               </Reveal>
 
-              <Reveal delay={240}>
+              <Reveal delay={160}>
                 <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                   <ButtonLink href="/contact#quote" withArrow className="w-full sm:w-auto">
                     Request a Quote
@@ -85,7 +75,7 @@ export default function HomePage() {
                 </div>
               </Reveal>
 
-              <Reveal delay={320}>
+              <Reveal delay={240}>
                 <dl className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-white/10 pt-8">
                   {[
                     { term: "Response", detail: "Within 24 hours" },
