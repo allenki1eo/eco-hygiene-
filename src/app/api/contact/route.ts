@@ -79,7 +79,7 @@ export async function POST(request: Request) {
     name: payload.name,
     company: payload.company,
     email: payload.email,
-    phone: payload.phone || "—",
+    phone: payload.phone || "not given",
     service: payload.service || "unspecified",
     message: payload.message?.slice(0, 200),
     receivedAt: new Date().toISOString(),

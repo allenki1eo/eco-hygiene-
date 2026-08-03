@@ -32,8 +32,8 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} — Industrial Hygiene & Environmental Services in Tanzania`,
-    template: `%s — ${site.shortName}`,
+    default: `${site.name} | Industrial Hygiene & Environmental Services in Tanzania`,
+    template: `%s | ${site.shortName}`,
   },
   description: site.description,
   keywords: [
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     locale: site.locale,
     url: site.url,
     siteName: site.name,
-    title: `${site.name} — Industrial Hygiene & Environmental Services`,
+    title: `${site.name} | Industrial Hygiene & Environmental Services`,
     description: site.description,
   },
   twitter: {

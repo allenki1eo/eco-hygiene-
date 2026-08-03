@@ -44,7 +44,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Let's talk about your plant."
-        lead="Whether it is a scheduled programme, a failed audit or an infestation that needs handling tonight — start here. We answer the phone at any hour."
+        lead="Whether it is a scheduled programme, a failed audit or an infestation that needs handling tonight, this is the place to start. We answer the phone at any hour."
         image="/banners/contact_banner.jpg"
       >
         <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 text-sm">
@@ -143,7 +143,7 @@ export default function ContactPage() {
                     })}
                   </ul>
                   <p className="mt-5 border-t border-white/10 pt-5 text-xs leading-relaxed text-carbon-300">
-                    Not sure which applies? Say so in the form — most plants need a combination, and
+                    Not sure which applies? Say so in the form. Most plants need a combination, and
                     the survey will tell us which.
                   </p>
                 </div>
@@ -159,7 +159,7 @@ export default function ContactPage() {
           <SectionHeading
             eyebrow="Find us"
             title="Sido Shinyanga, Tabora Road."
-            lead="Our base is in the Ibinzamata area of Shinyanga, from which we cover the Lake and Central zones. Site visits are arranged by appointment — call ahead and we will meet you at the gate."
+            lead="Our base is in the Ibinzamata area of Shinyanga, from which we cover the Lake and Central zones. Site visits are arranged by appointment; call ahead and we will meet you at the gate."
           />
           <Reveal delay={120} className="mt-12">
             <MapEmbed />

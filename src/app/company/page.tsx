@@ -7,7 +7,7 @@ import { IconLeaf, IconShield, IconUsers } from "@/components/icons";
 export const metadata: Metadata = {
   title: "Company",
   description:
-    "Ecohygiene Company Limited is a Tanzanian industrial hygiene and environmental services company based in Shinyanga — family-oriented, collaborative and built on sustainable practice.",
+    "Ecohygiene Company Limited is a Tanzanian industrial hygiene and environmental services company based in Shinyanga. Family-oriented, collaborative and built on sustainable practice.",
   alternates: { canonical: "/company" },
 };
 
@@ -35,7 +35,7 @@ export default function CompanyPage() {
       <PageHero
         eyebrow="The company"
         title="An environmental services company that happens to be very good at cleaning."
-        lead="Ecohygiene Company Limited was built for Tanzanian industry — factories that need to hold a hygiene standard every shift, without leaving a bigger problem behind them in the water and soil."
+        lead="Ecohygiene Company Limited was built for Tanzanian industry, for factories that need to hold a hygiene standard every shift, without leaving a bigger problem behind them in the water and soil."
         image="/banners/company_banner1.jpg"
       />
 
@@ -53,14 +53,14 @@ export default function CompanyPage() {
                 <p>
                   Every factory has three things it cannot afford to compromise: the product it
                   ships, the people who make it, and the environment it operates in. Hygiene work
-                  touches all three at once — which is why it should never be the cheapest line in
+                  touches all three at once, which is why it should never be the cheapest line in
                   the budget or the last thing scheduled before an audit.
                 </p>
                 <p>
                   Our mission is to give Tanzanian manufacturers a hygiene partner that meets an
                   international standard using methods the local environment can absorb.
                   Biodegradable chemistry, controlled dosing, integrated pest management and
-                  effluent load reduced at source — applied consistently, documented every visit.
+                  effluent load reduced at source, applied consistently and documented every visit.
                 </p>
               </Reveal>
             </div>
@@ -68,7 +68,7 @@ export default function CompanyPage() {
             <Reveal delay={140} className="lg:col-span-5 lg:col-start-8 lg:self-center">
               <figure className="rounded-3xl border border-carbon-900/10 bg-white p-8 shadow-lift sm:p-10">
                 <blockquote className="font-display text-xl leading-snug text-carbon-900 sm:text-2xl">
-                  “A plant is only as clean as its worst-kept drain — and only as sustainable as
+                  “A plant is only as clean as its worst-kept drain, and only as sustainable as
                   the water it sends downstream.”
                 </blockquote>
                 <figcaption className="mt-6 border-t border-carbon-900/10 pt-6 text-sm text-carbon-600">
@@ -123,7 +123,7 @@ export default function CompanyPage() {
           <SectionHeading
             eyebrow="Experience"
             title="Earned on beverage production sites."
-            lead="Our reference work is in drink manufacturing — the most demanding hygiene environment in the country, where sugar, water and warmth combine to punish any lapse in standard."
+            lead="Our reference work is in drink manufacturing, the most demanding hygiene environment in the country, where sugar, water and warmth combine to punish any lapse in standard."
           />
           <div className="mt-14">
             <StatStrip />
@@ -142,7 +142,7 @@ export default function CompanyPage() {
               <SectionHeading
                 eyebrow="Team culture"
                 title="Good hygiene work is done by people who intend to stay."
-                lead="Industrial cleaning has a reputation for churn — casual crews, no training, no ownership. We run the opposite model, and our clients feel the difference in the third month, not the first."
+                lead="Industrial cleaning has a reputation for churn: casual crews, no training, no ownership. We run the opposite model, and our clients feel the difference in the third month, not the first."
               />
               <Reveal delay={140} className="mt-10">
                 <ButtonLink href="/contact" variant="outline" withArrow>

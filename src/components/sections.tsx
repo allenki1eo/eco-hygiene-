@@ -237,7 +237,7 @@ export function CheckList({
 export function CtaBand({
   eyebrow = "Start a conversation",
   title = "Tell us what your plant is up against.",
-  body = "Send the brief — line layout, shift pattern, current programme, the findings that keep coming back. We will walk the site and come back with a written scope and price.",
+  body = "Send the brief: line layout, shift pattern, current programme, the findings that keep coming back. We will walk the site and come back with a written scope and price.",
 }: {
   eyebrow?: string;
   title?: string;

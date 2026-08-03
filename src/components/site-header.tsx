@@ -87,7 +87,7 @@ export function SiteHeader() {
         )}
       >
         <Container className="flex h-18 items-center justify-between gap-6">
-          <Link href="/" className="flex items-center" aria-label={`${site.name} — home`}>
+          <Link href="/" className="flex items-center" aria-label={`${site.name} home page`}>
             <Image
               src="/logos/logo.png"
               alt=""

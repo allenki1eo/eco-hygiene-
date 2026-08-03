@@ -61,6 +61,11 @@ src/
 
 ### Editing content
 
+The copy deliberately contains **no em dashes**. They are a common tell for
+machine-written text and the client asked for them out, so clauses are joined
+with colons, commas, semicolons, parentheses or full stops instead. Keep it that
+way when adding copy; `grep -rn "—" src` should only ever match code comments.
+
 Nearly all copy lives in `src/lib/site.ts` and `src/lib/services.ts`. Changing a
 phone number, adding a value or rewriting a service description means editing
 those two files — the header, footer, contact page, sitemap and structured data
@@ -118,8 +123,8 @@ optional by design: a service without a photo falls back to a designed gradient
 panel carrying its icon, so the grid stays consistent rather than looking
 half-finished. All four services currently have a photo.
 
-**Page banners** for the company and contact heroes live in `public/banners/` and
-are passed to `PageHero` via its optional `image` prop.
+**Page banners** for the services, company and contact heroes live in
+`public/banners/` and are passed to `PageHero` via its optional `image` prop.
 
 The same photo runs full-bleed behind the whole service detail hero, under a flat
 78% carbon wash. White headline text measures ~10:1 against the brightest part of

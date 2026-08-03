@@ -115,7 +115,7 @@ export const values = [
   },
   {
     title: "Experience",
-    body: "A decade of beverage and manufacturing work — CIP support, drain systems, high-care zones and wastewater plants.",
+    body: "A decade of beverage and manufacturing work: CIP support, drain systems, high-care zones and wastewater plants.",
   },
   {
     title: "Creativity",

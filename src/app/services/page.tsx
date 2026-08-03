@@ -19,8 +19,9 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Industrial hygiene, delivered as a programme — not a call-out."
+        title="Industrial hygiene, delivered as a programme, not a call-out."
         lead="Four disciplines that hold a factory to standard: what gets cleaned, what gets kept out, what it gets cleaned with, and what leaves the site afterwards."
+        image="/banners/company_banner.jpg"
       />
 
       {/* Index of all four services, each as a full-width record row. */}
@@ -129,7 +130,7 @@ export default function ServicesPage() {
               {
                 step: "02",
                 title: "Written scope",
-                body: "Areas, methods, frequencies, chemicals, equipment, crew size and price — documented so both sides know what is included.",
+                body: "Areas, methods, frequencies, chemicals, equipment, crew size and price, documented so both sides know what is included.",
               },
               {
                 step: "03",

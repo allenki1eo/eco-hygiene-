@@ -36,7 +36,7 @@ export const services: Service[] = [
     shortName: "Factory Cleaning",
     tagline: "Deep cleaning built around a live production line",
     summary:
-      "Eco-friendly deep cleaning for factory floors, production halls and high-care zones — scheduled around your shifts so the line keeps running.",
+      "Eco-friendly deep cleaning for factory floors, production halls and high-care zones, scheduled around your shifts so the line keeps running.",
     intro: [
       "A beverage plant is not an office. Sugar residue feeds bacteria, condensate carries it into crevices, and a floor drain left alone for a fortnight becomes the dirtiest asset in the building. General cleaning in this environment is a technical job with a verification step, not a mop and a bucket.",
       "Ecohygiene runs scheduled and shutdown cleaning programmes for production halls, filling and packing areas, warehouses, staff welfare facilities and external hardstanding. We work nights, weekends and planned stoppages so that hygiene work never becomes the reason a line stands still.",
@@ -50,7 +50,7 @@ export const services: Service[] = [
     capabilities: [
       {
         title: "Production and filling areas",
-        body: "Conveyors, filler bowls, guarding, drip trays and the structure above the line — the surfaces that decide whether your swabs pass.",
+        body: "Conveyors, filler bowls, guarding, drip trays and the structure above the line: the surfaces that decide whether your swabs pass.",
       },
       {
         title: "Floors, drains and plinths",
@@ -62,7 +62,7 @@ export const services: Service[] = [
       },
       {
         title: "Warehouse and yard",
-        body: "Racking, loading bays, external hardstanding and waste compounds — the areas where pest pressure usually starts.",
+        body: "Racking, loading bays, external hardstanding and waste compounds, the areas where pest pressure usually starts.",
       },
       {
         title: "Post-construction and shutdown",
@@ -82,7 +82,7 @@ export const services: Service[] = [
       {
         step: "02",
         title: "Written programme",
-        body: "Every area gets a defined method, chemical, dilution, frequency and responsible party — issued as a document you keep.",
+        body: "Every area gets a defined method, chemical, dilution, frequency and responsible party, issued as a document you keep.",
       },
       {
         step: "03",
@@ -111,7 +111,7 @@ export const services: Service[] = [
       points: [
         "Biodegradable, low-phosphate detergents as the default specification",
         "Dosing units and pre-mixed dilutions to eliminate over-use at the point of work",
-        "Water-efficient methods — scrubber-driers and foam application over open hosing",
+        "Water-efficient methods: scrubber-driers and foam application over open hosing",
         "Chemical selection screened for compatibility with your effluent treatment",
       ],
     },
@@ -130,7 +130,7 @@ export const services: Service[] = [
     shortName: "Pest Control",
     tagline: "Integrated pest management for food and beverage sites",
     summary:
-      "Monitoring, exclusion and targeted treatment that keeps pests out of production areas — with the lightest chemical footprint the situation allows.",
+      "Monitoring, exclusion and targeted treatment that keeps pests out of production areas, with the lightest chemical footprint the situation allows.",
     intro: [
       "In a food or beverage plant, pest control is an audit line item before it is anything else. A single sighting in a production hall can cost you a customer approval that took years to earn.",
       "We run integrated pest management (IPM) programmes: monitoring first, physical exclusion and housekeeping second, and targeted treatment only where it is genuinely warranted. Fumigation is available where the situation requires it, planned around production and executed under strict re-entry control.",
@@ -181,7 +181,7 @@ export const services: Service[] = [
       {
         step: "03",
         title: "Exclusion works",
-        body: "Proofing recommendations — door seals, mesh, drain covers, housekeeping changes — because keeping pests out beats killing them inside.",
+        body: "Proofing recommendations covering door seals, mesh, drain covers and housekeeping changes, because keeping pests out beats killing them inside.",
       },
       {
         step: "04",
@@ -201,7 +201,7 @@ export const services: Service[] = [
     ],
     eco: {
       headline: "The least chemistry that actually works",
-      body: "Blanket spraying is easy to sell and bad practice. Our programmes are built to reduce pesticide use over time by removing the conditions pests need — food, water, harbourage and access — so that treatment becomes the exception.",
+      body: "Blanket spraying is easy to sell and bad practice. Our programmes are built to reduce pesticide use over time by removing the conditions pests need (food, water, harbourage and access) so that treatment becomes the exception.",
       points: [
         "Non-toxic monitoring indoors wherever it can carry the load",
         "Physical exclusion and housekeeping treated as the primary control",
@@ -224,7 +224,7 @@ export const services: Service[] = [
     shortName: "Mixing Units",
     tagline: "Hygiene chemistry blended for your plant",
     summary:
-      "Industrial cleaning and hygiene chemicals blended, dosed and supplied to specification — the right product at the right strength, every shift.",
+      "Industrial cleaning and hygiene chemicals blended, dosed and supplied to specification: the right product at the right strength, every shift.",
     intro: [
       "Most hygiene failures we are called to investigate are not caused by the wrong product. They are caused by the right product used at the wrong strength, by someone guessing at a dilution over a bucket.",
       "Our mixing units address both ends of that problem. We blend cleaning and hygiene chemistry to a specification written for your water, your soil type and your effluent plant, and we install the dosing equipment that makes correct dilution the path of least resistance for the operator.",
@@ -254,7 +254,7 @@ export const services: Service[] = [
       },
       {
         title: "Titration and verification",
-        body: "In-use concentration checked on site, logged and corrected — so the strength on the label is the strength on the surface.",
+        body: "In-use concentration checked on site, logged and corrected, so the strength on the label is the strength on the surface.",
       },
       {
         title: "Handling and training",
@@ -275,7 +275,7 @@ export const services: Service[] = [
       {
         step: "03",
         title: "Specification sign-off",
-        body: "The agreed blend is documented — actives, dilution, contact time, temperature, rinse requirement and compatibility notes.",
+        body: "The agreed blend is documented: actives, dilution, contact time, temperature, rinse requirement and compatibility notes.",
       },
       {
         step: "04",
@@ -300,7 +300,7 @@ export const services: Service[] = [
         "Bulk supply and returnable containers instead of single-use small packs",
         "Readily biodegradable surfactants specified wherever performance allows",
         "Phosphate and NTA content minimised to protect downstream treatment",
-        "Dosing control that typically removes the 20–40% over-use of manual dilution",
+        "Dosing control that typically removes the 20-40% over-use of manual dilution",
       ],
     },
     outcomes: [
@@ -318,9 +318,9 @@ export const services: Service[] = [
     shortName: "Waste Water",
     tagline: "Protecting the water that leaves your site",
     summary:
-      "Monitoring, treatment support and discharge compliance for factory effluent — so the water leaving your plant is not a liability.",
+      "Monitoring, treatment support and discharge compliance for factory effluent, so the water leaving your plant is not a liability.",
     intro: [
-      "Effluent is where every other decision in the plant eventually shows up. Product loss, over-dosed chemistry, a failed CIP, a cleaning crew hosing sugar to drain — all of it arrives at the same place, and all of it is measurable.",
+      "Effluent is where every other decision in the plant eventually shows up. Product loss, over-dosed chemistry, a failed CIP, a cleaning crew hosing sugar to drain: all of it arrives at the same place, and all of it is measurable.",
       "Waste water stewardship is the part of our work we care most about. We help plants understand their effluent, reduce the load at source, keep treatment operating within its design envelope, and meet discharge requirements with records that stand up to inspection.",
     ],
     image: {
@@ -332,7 +332,7 @@ export const services: Service[] = [
     capabilities: [
       {
         title: "Effluent characterisation",
-        body: "Sampling and analysis across the shift pattern to establish real COD, BOD, pH, TSS, oil and grease loads — not assumed ones.",
+        body: "Sampling and analysis across the shift pattern to establish real COD, BOD, pH, TSS, oil and grease loads, not assumed ones.",
       },
       {
         title: "Load reduction at source",
@@ -352,7 +352,7 @@ export const services: Service[] = [
       },
       {
         title: "Water reduction",
-        body: "Identifying where clean water is being wasted — hose habits, single-pass cooling, rinse steps — and cutting draw at the meter.",
+        body: "Identifying where clean water is being wasted (hose habits, single-pass cooling, rinse steps) and cutting draw at the meter.",
       },
     ],
     process: [
@@ -369,7 +369,7 @@ export const services: Service[] = [
       {
         step: "03",
         title: "Reduction plan",
-        body: "Practical interventions ranked by effect and cost — procedure changes first, capital last.",
+        body: "Practical interventions ranked by effect and cost: procedure changes first, capital last.",
       },
       {
         step: "04",
@@ -389,7 +389,7 @@ export const services: Service[] = [
     ],
     eco: {
       headline: "The ecosystem downstream is the real client",
-      body: "Water discharged from a factory in Shinyanga does not disappear. It reaches soil, groundwater and the people using it. Every reduction in load at source is a reduction in what the environment is asked to absorb — which is why we start with prevention rather than end-of-pipe treatment.",
+      body: "Water discharged from a factory in Shinyanga does not disappear. It reaches soil, groundwater and the people using it. Every reduction in load at source is a reduction in what the environment is asked to absorb, which is why we start with prevention rather than end-of-pipe treatment.",
       points: [
         "Load reduced at source before any additional treatment is proposed",
         "Recovery of product and solids that would otherwise be washed to drain",

@@ -29,7 +29,7 @@ const pillars = [
   {
     icon: IconGauge,
     title: "Quality you can put in front of an auditor",
-    body: "Method statements, chemical dilution records, swab and ATP verification, pest activity trends and effluent readings — issued to you, not filed away.",
+    body: "Method statements, chemical dilution records, swab and ATP verification, pest activity trends and effluent readings, issued to you and not filed away.",
   },
   {
     icon: IconUsers,
@@ -69,7 +69,7 @@ export default function HomePage() {
               <Reveal delay={160}>
                 <p className="mt-7 max-w-xl text-lg leading-relaxed text-carbon-300">
                   Ecohygiene keeps Tanzanian beverage and manufacturing plants clean, pest-free
-                  and compliant — from the filling hall floor to the water that leaves your
+                  and compliant, from the filling hall floor to the water that leaves your
                   site. Eco-friendly by specification, industrial by standard.
                 </p>
               </Reveal>
@@ -237,7 +237,7 @@ export default function HomePage() {
                 dark
                 eyebrow="Eco-friendly by specification"
                 title="Solving a hygiene problem should not create an environmental one."
-                lead="Anyone can pass a swab test with enough chlorine. The harder job — the one we take on — is passing it with chemistry that breaks down, water you did not waste, and effluent your treatment plant can actually handle."
+                lead="Anyone can pass a swab test with enough chlorine. The harder job, the one we take on, is passing it with chemistry that breaks down, water you did not waste, and effluent your treatment plant can actually handle."
               />
               <Reveal delay={140} className="mt-10">
                 <ButtonLink href="/services/waste-water-stewardship" variant="ghost" withArrow>
@@ -286,7 +286,7 @@ export default function HomePage() {
               <SectionHeading
                 eyebrow="Talk to a person"
                 title="Something urgent on site right now?"
-                lead="Infestations, spill events and failed swabs do not wait for office hours — and neither do we. Call the number below and you will reach someone who can mobilise a crew."
+                lead="Infestations, spill events and failed swabs do not wait for office hours, and neither do we. Call the number below and you will reach someone who can mobilise a crew."
               />
             </div>
             <Reveal delay={120} className="lg:col-span-4 lg:col-start-9">

@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
     description: service.summary,
     alternates: { canonical: `/services/${service.slug}` },
     openGraph: {
-      title: `${service.name} — ${site.shortName}`,
+      title: `${service.name} | ${site.shortName}`,
       description: service.summary,
       url: `${site.url}/services/${service.slug}`,
     },
@@ -134,7 +134,7 @@ export default async function ServiceDetailPage({ params }: Params) {
             eyebrow="Scope of work"
             tone={isMoss ? "moss" : "hydro"}
             title="What the service covers."
-            lead="Scope is agreed in writing before mobilisation. These are the areas most plants include — yours is built from the site survey."
+            lead="Scope is agreed in writing before mobilisation. These are the areas most plants include; yours is built from the site survey."
           />
           <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {service.capabilities.map((item, i) => (

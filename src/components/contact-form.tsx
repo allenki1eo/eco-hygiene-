@@ -129,7 +129,7 @@ export function ContactForm() {
         </span>
         <h3 className="mt-6 text-2xl text-carbon-900">Message received.</h3>
         <p className="mt-3 max-w-md leading-relaxed text-carbon-600">
-          Thank you — a member of the Ecohygiene team will respond within one working day. If it is
+          Thank you. A member of the Ecohygiene team will respond within one working day. If it is
           urgent, call <strong className="font-medium text-carbon-900">0685325766</strong>; the line
           is answered 24 hours a day.
         </p>
@@ -235,7 +235,7 @@ export function ContactForm() {
           onChange={(e) => update("service", e.target.value)}
           className="mt-2 w-full appearance-none rounded-xl border border-carbon-900/15 bg-white px-4 py-3 text-[0.9375rem] text-carbon-900 transition focus:border-moss-400"
         >
-          <option value="">Not sure yet — advise me</option>
+          <option value="">Not sure yet, advise me</option>
           {services.map((service) => (
             <option key={service.slug} value={service.name}>
               {service.name}

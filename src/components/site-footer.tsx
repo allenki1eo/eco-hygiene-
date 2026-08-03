@@ -13,7 +13,7 @@ export function SiteFooter() {
       <Container className="relative">
         <div className="grid gap-12 border-b border-white/10 py-16 lg:grid-cols-12 lg:gap-8 lg:py-20">
           <div className="lg:col-span-4">
-            <Link href="/" className="inline-flex" aria-label={`${site.name} — home`}>
+            <Link href="/" className="inline-flex" aria-label={`${site.name} home page`}>
               <Image
                 src="/logos/logo.png"
                 alt=""
