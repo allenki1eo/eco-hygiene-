@@ -103,9 +103,12 @@ the headline retains its contrast ratio.
 
 **Service card photos** live in `public/services/`, named to match the service slug,
 and are declared on the optional `image` field in `src/lib/services.ts`. The field is
-optional by design: a service without a usable photo falls back to a designed
-gradient panel carrying its icon, so the grid stays consistent rather than looking
-half-finished. Pest control currently uses that fallback — see "Before you publish".
+optional by design: a service without a photo falls back to a designed gradient
+panel carrying its icon, so the grid stays consistent rather than looking
+half-finished. All four services currently have a photo.
+
+The same photo is used again as the service detail page hero, sitting beside the
+title and intro copy.
 
 Photographs belong in JPEG, not PNG. The supplied waste water PNG was 421 KB; the
 same image as JPEG is 51 KB and indistinguishable at card size.
@@ -161,16 +164,13 @@ These items are placeholders or need confirmation from the directors:
    the Pepsi, Sayona and Jambo Group marks are now displayed. These are
    third-party trademarks: confirm each client has given written permission
    before the site goes live, and remove any that have not.
-4. **Pest control card photo** — the supplied `public/pest control.png` is a
-   marketing graphic belonging to a different business: it carries an
-   "EcoFriendly Pest Control" logo and a "PEST CONTROL SPECIALIST" banner. It is
-   deliberately **not used** — publishing another company's branded artwork as
-   Ecohygiene's own work is both a copyright and a credibility problem, and
-   cropping the branding out would not fix the underlying licensing question.
-   The card uses the gradient fallback until a genuine photo of an Ecohygiene
-   pest control job is supplied. Drop one in `public/services/` as
-   `pest-control-management.jpg` and add the `image` field to that service in
-   `src/lib/services.ts`.
+4. **Pest control photo** (`public/services/pest-control-management.jpg`) — this
+   image is a marketing graphic carrying another business's branding: an
+   "EcoFriendly Pest Control" logo and a "PEST CONTROL SPECIALIST" banner, both
+   legible at hero size. It is in use at the client's instruction. Replacing it
+   with a photograph of an actual Ecohygiene pest control job would remove the
+   copyright exposure and read as Ecohygiene's own work; drop the replacement in
+   at the same path and nothing else needs changing.
 5. **Social links** (`src/lib/site.ts` → `social`) — currently point at the
    platforms' home pages. Swap in the real profiles or remove the entries.
 6. **Map coordinates** (`src/lib/site.ts` → `contact.geo`) — approximate for Sido,

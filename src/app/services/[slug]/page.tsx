@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { serviceBySlug, services } from "@/lib/services";
@@ -77,8 +78,8 @@ export default async function ServiceDetailPage({ params }: Params) {
             </ol>
           </nav>
 
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
-            <div className="lg:col-span-7">
+          <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-12">
+            <div className={service.image ? "lg:col-span-6" : "lg:col-span-8"}>
               <div className="flex items-center gap-4">
                 <span
                   className={cx(
@@ -97,20 +98,41 @@ export default async function ServiceDetailPage({ params }: Params) {
                 {service.name}
               </h1>
               <p className={cx("mt-6 text-lg font-medium", accent.text)}>{service.tagline}</p>
-            </div>
 
-            <div className="lg:col-span-5 lg:pt-24">
-              <div className="space-y-5 border-l-2 border-white/10 pl-6">
+              <div className="mt-8 space-y-5 border-l-2 border-white/10 pl-6">
                 {service.intro.map((paragraph) => (
                   <p key={paragraph} className="text-[0.9375rem] leading-relaxed text-carbon-300">
                     {paragraph}
                   </p>
                 ))}
               </div>
-              <ButtonLink href="/contact#quote" withArrow className="mt-8">
+
+              <ButtonLink href="/contact#quote" withArrow className="mt-9">
                 Request a Quote
               </ButtonLink>
             </div>
+
+            {service.image && (
+              <Reveal delay={140} className="lg:col-span-6">
+                <figure className="relative overflow-hidden rounded-3xl ring-1 ring-white/12">
+                  <Image
+                    src={service.image.src}
+                    alt={service.image.alt}
+                    width={service.image.width}
+                    height={service.image.height}
+                    priority
+                    sizes="(min-width: 1024px) 560px, 100vw"
+                    className="aspect-[4/3] w-full object-cover"
+                  />
+                  {/* Ties the photo into the dark hero instead of leaving it
+                      floating as a bright rectangle. */}
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 bg-gradient-to-t from-carbon-950/45 via-transparent to-transparent"
+                  />
+                </figure>
+              </Reveal>
+            )}
           </div>
         </Container>
       </section>

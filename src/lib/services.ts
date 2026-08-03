@@ -135,6 +135,12 @@ export const services: Service[] = [
       "In a food or beverage plant, pest control is an audit line item before it is anything else. A single sighting in a production hall can cost you a customer approval that took years to earn.",
       "We run integrated pest management (IPM) programmes: monitoring first, physical exclusion and housekeeping second, and targeted treatment only where it is genuinely warranted. Fumigation is available where the situation requires it, planned around production and executed under strict re-entry control.",
     ],
+    image: {
+      src: "/services/pest-control-management.jpg",
+      width: 600,
+      height: 500,
+      alt: "A pest control technician in protective coveralls operating a pressure sprayer.",
+    },
     capabilities: [
       {
         title: "Rodent management",
