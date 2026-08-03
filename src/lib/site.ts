@@ -56,14 +56,40 @@ export const social = [
 ] as const;
 
 /**
- * Client wordmarks are rendered as plain type, not reproductions of the
- * clients' logos. Drop official assets into /public and swap in once written
- * permission to use each mark has been granted.
+ * Client logos shown in the partner strip. These are third-party trademarks —
+ * confirm Ecohygiene has written permission to display each one before the
+ * site goes live.
+ *
+ * `width`/`height` are the asset's intrinsic pixel dimensions (needed by
+ * next/image to reserve space). `displayHeight` is the rendered height in the
+ * logo row and is set per logo by eye, not by formula: a square roundel needs
+ * noticeably more height than a wide wordmark to carry the same visual weight.
  */
 export const partners = [
-  { name: "Pepsi", note: "Bottling plant hygiene" },
-  { name: "Sayona", note: "Beverage production lines" },
-  { name: "Jambo", note: "Factory-wide sanitation" },
+  {
+    name: "Pepsi",
+    note: "Bottling plant hygiene",
+    logo: "/logos/pepsi.png",
+    width: 225,
+    height: 225,
+    displayHeight: 66,
+  },
+  {
+    name: "Sayona",
+    note: "Beverage production lines",
+    logo: "/logos/sayona.png",
+    width: 177,
+    height: 57,
+    displayHeight: 34,
+  },
+  {
+    name: "Jambo Group",
+    note: "Factory-wide sanitation",
+    logo: "/logos/jambo.png",
+    width: 1334,
+    height: 612,
+    displayHeight: 56,
+  },
 ] as const;
 
 /**
@@ -75,7 +101,7 @@ export const stats = [
   { value: "10+", label: "Years in industrial hygiene", detail: "Serving Tanzanian manufacturers since 2015" },
   { value: "24/7", label: "Response and site cover", detail: "Night shifts, weekends and plant shutdowns" },
   { value: "100%", label: "Eco-conscious chemistry", detail: "Biodegradable, food-safe-compatible programmes" },
-  { value: "3", label: "Beverage groups served", detail: "Pepsi, Sayona and Jambo production sites" },
+  { value: "3", label: "Beverage groups served", detail: "Pepsi, Sayona and Jambo Group production sites" },
 ];
 
 export const values = [

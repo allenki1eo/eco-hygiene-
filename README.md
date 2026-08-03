@@ -148,9 +148,10 @@ These items are placeholders or need confirmation from the directors:
    describes working practice, not accredited certification. Replace with real
    OSHA/NEMC/TBS/TFDA registrations once the certificates are to hand. Do not
    publish credential claims that have not been verified.
-3. **Client names** (`src/lib/site.ts` → `partners`) — Pepsi, Sayona and Jambo are
-   rendered as plain type, not as reproductions of their logos. Get written
-   permission before displaying any client's actual mark.
+3. **Client logos** (`src/lib/site.ts` → `partners`, assets in `public/logos/`) —
+   the Pepsi, Sayona and Jambo Group marks are now displayed. These are
+   third-party trademarks: confirm each client has given written permission
+   before the site goes live, and remove any that have not.
 4. **Social links** (`src/lib/site.ts` → `social`) — currently point at the
    platforms' home pages. Swap in the real profiles or remove the entries.
 5. **Map coordinates** (`src/lib/site.ts` → `contact.geo`) — approximate for Sido,

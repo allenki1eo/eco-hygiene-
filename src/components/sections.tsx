@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { partners, stats } from "@/lib/site";
 import type { Service } from "@/lib/services";
@@ -108,6 +109,9 @@ export function StatStrip({ dark = false }: { dark?: boolean }) {
 /* Partners                                                                   */
 /* -------------------------------------------------------------------------- */
 
+/** Common baseline the logos are optically centred on. */
+const LOGO_ROW_HEIGHT = 76;
+
 export function PartnerStrip({ dark = false }: { dark?: boolean }) {
   return (
     <div>
@@ -129,19 +133,30 @@ export function PartnerStrip({ dark = false }: { dark?: boolean }) {
             key={partner.name}
             delay={i * 90}
             className={cx(
-              "flex flex-col items-center justify-center gap-1.5 px-6 py-8 text-center",
+              "flex flex-col items-center justify-center gap-4 px-6 py-9 text-center",
               dark ? "bg-white/[0.03]" : "bg-white",
             )}
           >
-            {/* Client names set as type. Replace with supplied logo assets once
-                written permission to display each mark has been obtained. */}
+            {/* Fixed row height, natural aspect ratio: logos are never squashed
+                into equal boxes. Each displayHeight is set by eye in site.ts so
+                the roundel and the wordmarks carry the same visual weight. */}
             <span
               className={cx(
-                "font-display text-2xl font-semibold tracking-tight",
-                dark ? "text-white/85" : "text-carbon-800",
+                "flex items-center justify-center",
+                // Two of these marks are dark on transparent, so on a dark
+                // surface they sit on a light chip rather than disappearing.
+                dark && "rounded-xl bg-white px-5 py-3",
               )}
+              style={{ height: dark ? undefined : LOGO_ROW_HEIGHT }}
             >
-              {partner.name}
+              <Image
+                src={partner.logo}
+                alt={partner.name}
+                width={partner.width}
+                height={partner.height}
+                style={{ height: partner.displayHeight, width: "auto" }}
+                className="max-w-full object-contain"
+              />
             </span>
             <span className={cx("text-xs", dark ? "text-carbon-300" : "text-carbon-500")}>
               {partner.note}
