@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/lib/services";
 import { CtaBand, PageHero, PartnerStrip } from "@/components/sections";
@@ -26,7 +27,7 @@ export default function ServicesPage() {
       <section className="relative py-20 sm:py-24">
         <div aria-hidden className="absolute inset-0 bg-blueprint-light opacity-60" />
         <Container className="relative">
-          <ul className="space-y-5">
+          <ul className="space-y-6 sm:space-y-5">
             {services.map((service, i) => {
               const Icon = serviceIcons[service.slug];
               const accent =
@@ -39,31 +40,54 @@ export default function ServicesPage() {
                   <Link
                     href={`/services/${service.slug}`}
                     className={cx(
-                      "group grid gap-8 rounded-3xl border border-carbon-900/10 bg-white p-7 transition duration-500 ease-out hover:-translate-y-1 hover:shadow-lift-lg sm:p-10 lg:grid-cols-12 lg:items-center",
+                      "group grid gap-x-8 gap-y-7 rounded-3xl border border-carbon-900/10 bg-white p-7 transition duration-500 ease-out hover:-translate-y-1 hover:shadow-lift-lg sm:p-8 lg:grid-cols-12 lg:items-center lg:gap-y-0",
                       accent.hover,
                     )}
                   >
-                    <div className="flex items-center gap-5 lg:col-span-4">
+                    {/* Thumbnail, with the icon chip overlaid exactly as on the
+                        home cards so the two treatments read as one system. */}
+                    <div className="relative lg:col-span-3">
+                      <div className="relative aspect-[16/10] overflow-hidden rounded-2xl bg-carbon-900 sm:aspect-[3/2] lg:aspect-[4/3]">
+                        {service.image ? (
+                          <Image
+                            src={service.image.src}
+                            alt={service.image.alt}
+                            width={service.image.width}
+                            height={service.image.height}
+                            sizes="(min-width: 1024px) 280px, 100vw"
+                            className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+                          />
+                        ) : (
+                          <>
+                            <div aria-hidden className="absolute inset-0 bg-aurora opacity-90" />
+                            <div aria-hidden className="absolute inset-0 bg-blueprint opacity-60" />
+                          </>
+                        )}
+                        <div
+                          aria-hidden
+                          className="absolute inset-0 bg-gradient-to-t from-carbon-950/55 via-transparent to-transparent"
+                        />
+                      </div>
                       <span
                         className={cx(
-                          "inline-flex size-14 shrink-0 items-center justify-center rounded-2xl transition-colors duration-500 group-hover:bg-carbon-950 group-hover:text-white",
-                          accent.chip,
+                          "absolute bottom-3 left-3 inline-flex size-11 items-center justify-center rounded-2xl bg-white shadow-lift ring-1 ring-carbon-900/5 transition-colors duration-500 group-hover:bg-carbon-950",
+                          accent.text,
                         )}
                       >
-                        <Icon className="size-7" />
+                        <Icon className="size-5 transition-colors duration-500 group-hover:text-white" />
                       </span>
-                      <div>
-                        <span className="font-mono text-xs tracking-[0.2em] text-carbon-500">
-                          {service.index}
-                        </span>
-                        <h2 className="mt-1.5 text-xl leading-snug text-carbon-900">
-                          {service.name}
-                        </h2>
-                      </div>
                     </div>
 
-                    <div className="lg:col-span-6">
-                      <p className={cx("text-sm font-medium", accent.text)}>{service.tagline}</p>
+                    <div className="lg:col-span-7">
+                      <span className="font-mono text-xs tracking-[0.2em] text-carbon-500">
+                        {service.index}
+                      </span>
+                      <h2 className="mt-1.5 text-xl leading-snug text-carbon-900">
+                        {service.name}
+                      </h2>
+                      <p className={cx("mt-3 text-sm font-medium", accent.text)}>
+                        {service.tagline}
+                      </p>
                       <p className="mt-2.5 text-[0.9375rem] leading-relaxed text-carbon-600">
                         {service.summary}
                       </p>
