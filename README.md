@@ -96,10 +96,19 @@ The hero is a hand-drawn SVG of a beverage plant — process tanks, filling line
 the effluent path beneath the floor — rather than stock photography. It carries the
 brand palette exactly and weighs a few kilobytes.
 
-**To use real photography instead:** drop optimised images in `public/`, replace
-`<PlantIllustration />` in `src/app/page.tsx` with `next/image`, and set explicit
-`width`/`height` plus a descriptive `alt`. Keep the dark overlay so the headline
-retains its contrast ratio.
+**To use real photography in the hero instead:** drop an optimised image in
+`public/`, replace `<PlantIllustration />` in `src/app/page.tsx` with `next/image`,
+and set explicit `width`/`height` plus a descriptive `alt`. Keep the dark overlay so
+the headline retains its contrast ratio.
+
+**Service card photos** live in `public/services/`, named to match the service slug,
+and are declared on the optional `image` field in `src/lib/services.ts`. The field is
+optional by design: a service without a usable photo falls back to a designed
+gradient panel carrying its icon, so the grid stays consistent rather than looking
+half-finished. Pest control currently uses that fallback — see "Before you publish".
+
+Photographs belong in JPEG, not PNG. The supplied waste water PNG was 421 KB; the
+same image as JPEG is 51 KB and indistinguishable at card size.
 
 ---
 
@@ -152,12 +161,22 @@ These items are placeholders or need confirmation from the directors:
    the Pepsi, Sayona and Jambo Group marks are now displayed. These are
    third-party trademarks: confirm each client has given written permission
    before the site goes live, and remove any that have not.
-4. **Social links** (`src/lib/site.ts` → `social`) — currently point at the
+4. **Pest control card photo** — the supplied `public/pest control.png` is a
+   marketing graphic belonging to a different business: it carries an
+   "EcoFriendly Pest Control" logo and a "PEST CONTROL SPECIALIST" banner. It is
+   deliberately **not used** — publishing another company's branded artwork as
+   Ecohygiene's own work is both a copyright and a credibility problem, and
+   cropping the branding out would not fix the underlying licensing question.
+   The card uses the gradient fallback until a genuine photo of an Ecohygiene
+   pest control job is supplied. Drop one in `public/services/` as
+   `pest-control-management.jpg` and add the `image` field to that service in
+   `src/lib/services.ts`.
+5. **Social links** (`src/lib/site.ts` → `social`) — currently point at the
    platforms' home pages. Swap in the real profiles or remove the entries.
-5. **Map coordinates** (`src/lib/site.ts` → `contact.geo`) — approximate for Sido,
+6. **Map coordinates** (`src/lib/site.ts` → `contact.geo`) — approximate for Sido,
    Shinyanga. Confirm the exact plot location.
-6. **Contact form delivery** — see above; nothing is emailed until it is wired up.
-7. **`NEXT_PUBLIC_SITE_URL`** — set to the live domain so canonical URLs, the
+7. **Contact form delivery** — see above; nothing is emailed until it is wired up.
+8. **`NEXT_PUBLIC_SITE_URL`** — set to the live domain so canonical URLs, the
    sitemap and the social card resolve correctly.
 
 ---

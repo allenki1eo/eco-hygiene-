@@ -13,50 +13,79 @@ export function ServiceCard({ service, delay = 0 }: { service: Service; delay?: 
   const Icon = serviceIcons[service.slug];
   const accent =
     service.accent === "moss"
-      ? { text: "text-moss-600", ring: "group-hover:border-moss-400/60", glow: "bg-moss-400/12" }
-      : { text: "text-hydro-600", ring: "group-hover:border-hydro-400/60", glow: "bg-hydro-400/12" };
+      ? { text: "text-moss-600", ring: "group-hover:border-moss-400/60", chip: "text-moss-600" }
+      : { text: "text-hydro-600", ring: "group-hover:border-hydro-400/60", chip: "text-hydro-600" };
 
   return (
     <Reveal as="article" delay={delay} className="h-full">
       <Link
         href={`/services/${service.slug}`}
         className={cx(
-          "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-carbon-900/10 bg-white p-7 transition duration-500 ease-out hover:-translate-y-1.5 hover:shadow-lift-lg sm:p-8",
+          "group relative flex h-full flex-col overflow-hidden rounded-3xl border border-carbon-900/10 bg-white transition duration-500 ease-out hover:-translate-y-1.5 hover:shadow-lift-lg",
           accent.ring,
         )}
       >
-        <div
-          aria-hidden
-          className={cx(
-            "absolute -right-16 -top-16 size-40 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100",
-            accent.glow,
+        {/* Media panel. A photo where we have one; otherwise a designed
+            gradient panel carrying the service icon, so a card without
+            photography still looks deliberate rather than unfinished. */}
+        <div className="relative aspect-[16/10] overflow-hidden bg-carbon-900">
+          {service.image ? (
+            <Image
+              src={service.image.src}
+              alt={service.image.alt}
+              width={service.image.width}
+              height={service.image.height}
+              sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
+              className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+            />
+          ) : (
+            <>
+              <div aria-hidden className="absolute inset-0 bg-aurora opacity-90" />
+              <div aria-hidden className="absolute inset-0 bg-blueprint opacity-60" />
+              {/* Oversized, cropped watermark — decorative, so it does not
+                  read as a duplicate of the icon chip below it. */}
+              <Icon
+                aria-hidden
+                className="absolute -bottom-8 -right-6 size-44 text-white/12 transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+            </>
           )}
-        />
-        <div className="relative flex items-start justify-between gap-4">
+
+          {/* Scrim keeps the bottom edge dark enough for the icon chip to sit
+              against, whatever the photo is doing. */}
+          <div
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-t from-carbon-950/65 via-transparent to-carbon-950/20"
+          />
+          {/* The index gets its own chip rather than relying on the scrim —
+              these photos range from a dark plant hall to a bright sky. */}
+          <span className="absolute right-3.5 top-3.5 rounded-full bg-carbon-950/55 px-2.5 py-1 font-mono text-[0.6875rem] tracking-[0.2em] text-white backdrop-blur-sm">
+            {service.index}
+          </span>
+        </div>
+
+        <div className="relative flex flex-1 flex-col p-7 sm:p-8">
+          {/* Icon chip straddles the media edge — ties photo and copy together. */}
           <span
             className={cx(
-              "inline-flex size-12 items-center justify-center rounded-2xl bg-carbon-50 transition-colors duration-500 group-hover:bg-carbon-950",
-              accent.text,
+              "absolute -top-6 left-7 inline-flex size-12 items-center justify-center rounded-2xl bg-white shadow-lift ring-1 ring-carbon-900/5 transition-colors duration-500 group-hover:bg-carbon-950 sm:left-8",
+              accent.chip,
             )}
           >
             <Icon className="size-6 transition-colors duration-500 group-hover:text-white" />
           </span>
-          <span className="font-mono text-xs tracking-[0.2em] text-carbon-500">{service.index}</span>
-        </div>
 
-        <h3 className="relative mt-7 text-xl leading-snug text-carbon-900">{service.name}</h3>
-        <p className="relative mt-3 flex-1 text-[0.9375rem] leading-relaxed text-carbon-600">
-          {service.summary}
-        </p>
-        <span
-          className={cx(
-            "relative mt-6 inline-flex items-center gap-2 text-sm font-medium",
-            accent.text,
-          )}
-        >
-          Explore the service
-          <IconArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1.5" />
-        </span>
+          <h3 className="mt-6 text-xl leading-snug text-carbon-900">{service.name}</h3>
+          <p className="mt-3 flex-1 text-[0.9375rem] leading-relaxed text-carbon-600">
+            {service.summary}
+          </p>
+          <span
+            className={cx("mt-6 inline-flex items-center gap-2 text-sm font-medium", accent.text)}
+          >
+            Explore the service
+            <IconArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1.5" />
+          </span>
+        </div>
       </Link>
     </Reveal>
   );

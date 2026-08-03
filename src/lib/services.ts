@@ -13,6 +13,12 @@ export type Service = {
   shortName: string;
   tagline: string;
   summary: string;
+  /**
+   * Card photograph. Optional on purpose: a service without a usable photo
+   * falls back to a designed gradient panel rather than a broken-looking gap,
+   * so the grid stays consistent while assets are still being gathered.
+   */
+  image?: { src: string; width: number; height: number; alt: string };
   /** Long-form opener on the detail page. */
   intro: string[];
   capabilities: { title: string; body: string }[];
@@ -35,6 +41,12 @@ export const services: Service[] = [
       "A beverage plant is not an office. Sugar residue feeds bacteria, condensate carries it into crevices, and a floor drain left alone for a fortnight becomes the dirtiest asset in the building. General cleaning in this environment is a technical job with a verification step, not a mop and a bucket.",
       "Ecohygiene runs scheduled and shutdown cleaning programmes for production halls, filling and packing areas, warehouses, staff welfare facilities and external hardstanding. We work nights, weekends and planned stoppages so that hygiene work never becomes the reason a line stands still.",
     ],
+    image: {
+      src: "/services/factory-general-cleaning.jpg",
+      width: 650,
+      height: 433,
+      alt: "Spray bars washing down a production conveyor belt inside a factory.",
+    },
     capabilities: [
       {
         title: "Production and filling areas",
@@ -211,6 +223,12 @@ export const services: Service[] = [
       "Most hygiene failures we are called to investigate are not caused by the wrong product. They are caused by the right product used at the wrong strength, by someone guessing at a dilution over a bucket.",
       "Our mixing units address both ends of that problem. We blend cleaning and hygiene chemistry to a specification written for your water, your soil type and your effluent plant, and we install the dosing equipment that makes correct dilution the path of least resistance for the operator.",
     ],
+    image: {
+      src: "/services/mixing-units.jpg",
+      width: 1008,
+      height: 756,
+      alt: "Stainless steel blending vessels and dosing rig on a raised platform at the Ecohygiene mixing facility.",
+    },
     capabilities: [
       {
         title: "Formulation to specification",
@@ -299,6 +317,12 @@ export const services: Service[] = [
       "Effluent is where every other decision in the plant eventually shows up. Product loss, over-dosed chemistry, a failed CIP, a cleaning crew hosing sugar to drain — all of it arrives at the same place, and all of it is measurable.",
       "Waste water stewardship is the part of our work we care most about. We help plants understand their effluent, reduce the load at source, keep treatment operating within its design envelope, and meet discharge requirements with records that stand up to inspection.",
     ],
+    image: {
+      src: "/services/waste-water-stewardship.jpg",
+      width: 624,
+      height: 353,
+      alt: "An open effluent settling basin holding treated waste water alongside grassland.",
+    },
     capabilities: [
       {
         title: "Effluent characterisation",
