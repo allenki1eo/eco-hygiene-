@@ -187,7 +187,7 @@ export function PlantIllustration({ className }: { className?: string }) {
       </g>
 
       {/* ---- Callout labels ---------------------------------------------------- */}
-      <g fontFamily="var(--font-mono-tech), monospace" fontSize="11" letterSpacing="1.6" fill="#647b7d">
+      <g fontFamily="var(--font-mono-tech), monospace" fontSize="11" letterSpacing="1.6" fill="#97acad">
         <text x="96" y="168">PROCESS TANKS</text>
         <text x="428" y="266">FILLING LINE</text>
         <text x="60" y="536">EFFLUENT TREATMENT</text>

@@ -248,7 +248,7 @@ export function CtaBand({
       <div aria-hidden className="absolute inset-0 bg-blueprint opacity-50" />
       <Container className="relative">
         <div className="reveal mx-auto max-w-3xl text-center">
-          <Eyebrow tone="moss" className="justify-center text-moss-300">
+          <Eyebrow tone="moss-dark" className="justify-center">
             {eyebrow}
           </Eyebrow>
           <h2 className="mt-6 text-3xl leading-[1.1] text-white sm:text-4xl lg:text-5xl">{title}</h2>
@@ -275,23 +275,48 @@ export function PageHero({
   eyebrow,
   title,
   lead,
+  image,
   children,
 }: {
   eyebrow: string;
   title: string;
   lead?: string;
+  /** Optional full-bleed banner photograph behind the whole hero. */
+  image?: string;
   children?: React.ReactNode;
 }) {
   return (
-    <section className="relative overflow-hidden bg-carbon-950 pt-16 pb-20 sm:pt-24 sm:pb-28">
-      <div aria-hidden className="absolute inset-0 bg-blueprint opacity-50" />
+    <section className="relative isolate overflow-hidden bg-carbon-950 pt-16 pb-20 sm:pt-24 sm:pb-28">
+      {image && (
+        <Image
+          src={image}
+          alt=""
+          aria-hidden
+          fill
+          priority
+          sizes="100vw"
+          className="-z-20 object-cover"
+        />
+      )}
+      {/* Same flat wash as the service banners: heavy enough that the copy
+          clears AA over the brightest part of the photograph. */}
+      {image && <div aria-hidden className="absolute inset-0 -z-10 bg-carbon-950/78" />}
+      <div aria-hidden className={cx("absolute inset-0 -z-10 bg-blueprint", image ? "opacity-40" : "opacity-50")} />
       <Container className="relative">
         <div className="max-w-3xl">
-          <Eyebrow tone="moss" className="text-moss-300">
-            {eyebrow}
-          </Eyebrow>
+          {/* Over a photo the copy steps one tone lighter. */}
+          <Eyebrow tone={image ? "moss-photo" : "moss-dark"}>{eyebrow}</Eyebrow>
           <h1 className="mt-6 text-4xl leading-[1.06] text-white sm:text-5xl lg:text-6xl">{title}</h1>
-          {lead && <p className="mt-7 max-w-2xl text-lg leading-relaxed text-carbon-300">{lead}</p>}
+          {lead && (
+            <p
+              className={cx(
+                "mt-7 max-w-2xl text-lg leading-relaxed",
+                image ? "text-carbon-200" : "text-carbon-300",
+              )}
+            >
+              {lead}
+            </p>
+          )}
           {children}
         </div>
       </Container>

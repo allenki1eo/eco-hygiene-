@@ -25,7 +25,7 @@ export function MapEmbed() {
             href={`https://www.google.com/maps/search/?api=1&query=${lat}%2C${lng}`}
             target="_blank"
             rel="noreferrer noopener"
-            className="text-sm text-moss-600 underline underline-offset-4"
+            className="text-sm text-moss-700 underline underline-offset-4"
           >
             Open in maps
           </a>

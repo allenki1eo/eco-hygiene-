@@ -2,6 +2,16 @@ import Link from "next/link";
 import type { ComponentProps, ReactNode } from "react";
 import { IconArrowRight } from "@/components/icons";
 
+export type EyebrowTone =
+  | "moss"
+  | "hydro"
+  | "muted"
+  /** On flat dark sections. */
+  | "moss-dark"
+  | "hydro-dark"
+  /** On a dark wash over a photograph. */
+  | "moss-photo";
+
 export function cx(...classes: (string | false | null | undefined)[]) {
   return classes.filter(Boolean).join(" ");
 }
@@ -26,13 +36,22 @@ export function Eyebrow({
   className,
 }: {
   children: ReactNode;
-  tone?: "moss" | "hydro" | "muted";
+  tone?: EyebrowTone;
   className?: string;
 }) {
-  const tones = {
+  /**
+   * One tone per surface. Passing a `text-*` class alongside `tone` does NOT
+   * work — both land in the class list and the stylesheet order decides, which
+   * silently rendered every dark-surface eyebrow in the light-surface green.
+   * Pick the tone instead.
+   */
+  const tones: Record<EyebrowTone, string> = {
     moss: "text-moss-600",
     hydro: "text-hydro-600",
     muted: "text-carbon-500",
+    "moss-dark": "text-moss-300",
+    "hydro-dark": "text-hydro-300",
+    "moss-photo": "text-moss-200",
   };
   return (
     <p className={cx("eyebrow flex items-center gap-2.5", tones[tone], className)}>
@@ -95,6 +114,7 @@ export function SectionHeading({
   align?: "left" | "center";
   dark?: boolean;
 }) {
+  const eyebrowTone: EyebrowTone = dark ? (tone === "hydro" ? "hydro-dark" : "moss-dark") : tone;
   return (
     <div
       className={cx(
@@ -102,7 +122,7 @@ export function SectionHeading({
         align === "center" && "mx-auto text-center [&_p.eyebrow]:justify-center",
       )}
     >
-      {eyebrow && <Eyebrow tone={dark ? (tone === "hydro" ? "hydro" : "moss") : tone}>{eyebrow}</Eyebrow>}
+      {eyebrow && <Eyebrow tone={eyebrowTone}>{eyebrow}</Eyebrow>}
       <h2
         className={cx(
           "mt-5 text-3xl leading-[1.12] sm:text-4xl lg:text-[2.75rem]",

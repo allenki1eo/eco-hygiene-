@@ -118,6 +118,9 @@ optional by design: a service without a photo falls back to a designed gradient
 panel carrying its icon, so the grid stays consistent rather than looking
 half-finished. All four services currently have a photo.
 
+**Page banners** for the company and contact heroes live in `public/banners/` and
+are passed to `PageHero` via its optional `image` prop.
+
 The same photo runs full-bleed behind the whole service detail hero, under a flat
 78% carbon wash. White headline text measures ~10:1 against the brightest part of
 every one of these photos, and the hero body copy steps one tone lighter
@@ -155,11 +158,22 @@ The front end needs no changes when delivery is added.
 - Mobile drawer: `role="dialog"`, Escape to close, focus moved in and returned
 - Every icon either labelled or `aria-hidden`
 - Automated audit: **axe-core (WCAG 2.1 A/AA) reports zero violations** across
-  home, services index, a service detail page, company, contact, the 404, the open
-  mobile drawer and the form's error state
+  every page, the open mobile drawer and the form's error state
+- Contrast is also verified by pixel sampling: the page is screenshotted with all
+  text made transparent, then the actual rendered backdrop behind each glyph run
+  is measured. **953 text nodes checked, none below threshold.** This matters
+  because axe returns "incomplete" rather than a result wherever text sits over a
+  photograph or a decorative overlay, which on this site is most of the heroes.
 
-Re-run an audit after changing colours — several greys and greens in this palette
-sit close to the 4.5:1 threshold.
+Re-run both after changing colours — several greys and greens in this palette sit
+close to the 4.5:1 threshold.
+
+**A trap worth knowing:** passing a `text-*` class to `<Eyebrow>` alongside `tone`
+does not override the tone. Both classes land in the class list and the generated
+stylesheet order decides the winner, which silently rendered every dark-surface
+eyebrow in the light-surface green (3.8:1) for several commits. `Eyebrow` now
+takes explicit per-surface tones (`moss-dark`, `moss-photo`, …) — use those
+instead of overriding the colour.
 
 ---
 

@@ -36,6 +36,7 @@ export default function CompanyPage() {
         eyebrow="The company"
         title="An environmental services company that happens to be very good at cleaning."
         lead="Ecohygiene Company Limited was built for Tanzanian industry — factories that need to hold a hygiene standard every shift, without leaving a bigger problem behind them in the water and soil."
+        image="/banners/company_banner1.jpg"
       />
 
       {/* ------------------------------------------------------------- Mission */}

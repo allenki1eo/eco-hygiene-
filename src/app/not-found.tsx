@@ -9,9 +9,7 @@ export default function NotFound() {
       <div aria-hidden className="absolute inset-0 bg-blueprint opacity-50" />
       <Container className="relative">
         <div className="max-w-2xl">
-          <Eyebrow tone="moss" className="text-moss-300">
-            Error 404
-          </Eyebrow>
+<Eyebrow tone="moss-dark">Error 404</Eyebrow>
           <h1 className="mt-6 text-4xl leading-tight text-white sm:text-5xl">
             This page has been cleaned away.
           </h1>

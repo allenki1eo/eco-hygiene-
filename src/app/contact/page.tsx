@@ -45,6 +45,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Let's talk about your plant."
         lead="Whether it is a scheduled programme, a failed audit or an infestation that needs handling tonight — start here. We answer the phone at any hour."
+        image="/banners/contact_banner.jpg"
       >
         <div className="mt-10 flex flex-wrap gap-x-8 gap-y-4 text-sm">
           <a
@@ -61,7 +62,7 @@ export default function ContactPage() {
             <IconMail className="size-4 text-moss-400" />
             <span className="font-medium">{contact.email}</span>
           </a>
-          <span className="inline-flex items-center gap-2.5 text-carbon-300">
+          <span className="inline-flex items-center gap-2.5 text-carbon-200">
             <IconClock className="size-4 text-moss-400" />
             {contact.hours}
           </span>
