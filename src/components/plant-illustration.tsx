@@ -40,16 +40,10 @@ export function PlantIllustration({ className }: { className?: string }) {
           <stop offset="0" stopColor="#2fb87f" stopOpacity="0.5" />
           <stop offset="1" stopColor="#2f97cf" stopOpacity="0.5" />
         </linearGradient>
-        <radialGradient id="halo" cx="0.5" cy="0.5" r="0.5">
-          <stop offset="0" stopColor="#2fb87f" stopOpacity="0.32" />
-          <stop offset="1" stopColor="#2fb87f" stopOpacity="0" />
-        </radialGradient>
         <clipPath id="tank-clip-a">
           <path d="M96 196h132v250a26 26 0 0 1-26 26h-80a26 26 0 0 1-26-26z" />
         </clipPath>
       </defs>
-
-      <circle cx="300" cy="230" r="230" fill="url(#halo)" />
 
       {/* ---- Overhead service gantry -------------------------------------- */}
       <g stroke="#405254" strokeWidth="2" opacity="0.75">

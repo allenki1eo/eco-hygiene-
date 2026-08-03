@@ -1,11 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { contact, nav, site } from "@/lib/site";
 import { services } from "@/lib/services";
-import { IconClose, IconMenu, IconPhone, Logomark, serviceIcons } from "@/components/icons";
+import { IconClose, IconMenu, IconPhone, serviceIcons } from "@/components/icons";
 import { ButtonLink, Container, cx } from "@/components/ui";
 
 export function SiteHeader() {
@@ -91,7 +92,15 @@ export function SiteHeader() {
             className="flex items-center gap-3"
             aria-label={`${site.shortName} — home`}
           >
-            <Logomark className="size-10 shrink-0" />
+            <Image
+              src="/logos/logo.png"
+              alt=""
+              aria-hidden
+              width={234}
+              height={231}
+              priority
+              className="size-10 shrink-0 object-contain"
+            />
             <span className="leading-tight whitespace-nowrap">
               <span className="block font-display text-[1.0625rem] font-semibold tracking-tight text-carbon-900">
                 ECOHYGIENE

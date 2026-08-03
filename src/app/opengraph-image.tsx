@@ -1,3 +1,5 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { contact, site } from "@/lib/site";
 
@@ -6,7 +8,11 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 /** Social preview card, generated at build time from the brand palette. */
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  // ImageResponse cannot resolve public/ URLs, so the mark is inlined.
+  const logo = await readFile(join(process.cwd(), "public/logos/logo.png"));
+  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -18,21 +24,12 @@ export default function OpengraphImage() {
           justifyContent: "space-between",
           padding: 80,
           backgroundColor: "#05090a",
-          backgroundImage:
-            "radial-gradient(60% 60% at 10% 0%, rgba(17,155,102,0.42) 0%, rgba(5,9,10,0) 60%), radial-gradient(55% 60% at 95% 25%, rgba(15,119,176,0.38) 0%, rgba(5,9,10,0) 62%)",
           color: "white",
           fontFamily: "sans-serif",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-          <div
-            style={{
-              width: 64,
-              height: 64,
-              borderRadius: 18,
-              backgroundImage: "linear-gradient(135deg, #2fb87f, #2f97cf)",
-            }}
-          />
+          <img src={logoSrc} width={72} height={71} alt="" />
           <div style={{ display: "flex", flexDirection: "column" }}>
             <span style={{ fontSize: 30, fontWeight: 700, letterSpacing: -0.5 }}>ECOHYGIENE</span>
             <span style={{ fontSize: 18, color: "#647b7d", letterSpacing: 4 }}>COMPANY LIMITED</span>

@@ -52,7 +52,7 @@ src/
     contact-form.tsx          Validated contact form (client component)
     plant-illustration.tsx    Hero illustration (hand-drawn SVG)
     map-embed.tsx             OpenStreetMap embed with fallback
-    icons.tsx                 Icon set and logomark
+    icons.tsx                 Icon set
     reveal.tsx                Scroll-reveal observer
   lib/
     site.ts                   Company facts, contact details, values, guarantees
@@ -76,11 +76,16 @@ Defined as Tailwind v4 tokens in `src/app/globals.css`:
 - **Moss** — sustainability green, the primary accent
 - **Hydro** — water blue, the secondary accent (used for the water-facing services)
 
+Dark sections are flat carbon with the hairline blueprint grid — no gradient
+washes or colour glows. The only gradients left are functional scrims that keep
+text and icon chips legible over photography, plus the headline highlight in
+`.text-gradient`, which colours text rather than a background.
+
 Type: **Sora** for headings (geometric, sturdy), **Inter** for body,
 **IBM Plex Mono** for the small technical labels. All self-hosted via
 `next/font`, so there are no external font requests at runtime.
 
-Shared classes: `.eyebrow`, `.bg-blueprint`, `.bg-blueprint-light`, `.bg-aurora`,
+Shared classes: `.eyebrow`, `.bg-blueprint`, `.bg-blueprint-light`,
 `.text-gradient`, `.reveal`.
 
 ### Motion
@@ -101,14 +106,22 @@ brand palette exactly and weighs a few kilobytes.
 and set explicit `width`/`height` plus a descriptive `alt`. Keep the dark overlay so
 the headline retains its contrast ratio.
 
+The company logo is `public/logos/logo.png`, used in the header, the footer and
+the social card, and as the favicon (`src/app/icon.png`). It was supplied as a
+432 KB `.ico`; the 256px frame was extracted, the white outside the roundel made
+transparent, and the result trimmed. The white disc *inside* the ring is kept
+deliberately so the mark stays legible on the dark footer.
+
 **Service card photos** live in `public/services/`, named to match the service slug,
 and are declared on the optional `image` field in `src/lib/services.ts`. The field is
 optional by design: a service without a photo falls back to a designed gradient
 panel carrying its icon, so the grid stays consistent rather than looking
 half-finished. All four services currently have a photo.
 
-The same photo is used again as the service detail page hero, sitting beside the
-title and intro copy.
+The same photo runs full-bleed behind the whole service detail hero, under a flat
+78% carbon wash. White headline text measures ~10:1 against the brightest part of
+every one of these photos, and the hero body copy steps one tone lighter
+(`carbon-200`, `moss-200`/`hydro-200`) to clear AA over a photographic backdrop.
 
 Photographs belong in JPEG, not PNG. The supplied waste water PNG was 421 KB; the
 same image as JPEG is 51 KB and indistinguishable at card size.

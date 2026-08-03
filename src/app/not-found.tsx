@@ -6,7 +6,6 @@ import { IconArrowRight } from "@/components/icons";
 export default function NotFound() {
   return (
     <section className="relative overflow-hidden bg-carbon-950 py-24 sm:py-32">
-      <div aria-hidden className="absolute inset-0 bg-aurora opacity-70" />
       <div aria-hidden className="absolute inset-0 bg-blueprint opacity-50" />
       <Container className="relative">
         <div className="max-w-2xl">

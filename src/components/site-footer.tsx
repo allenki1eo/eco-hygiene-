@@ -1,23 +1,27 @@
+import Image from "next/image";
 import Link from "next/link";
 import { addressLines, contact, nav, site, social } from "@/lib/site";
 import { services } from "@/lib/services";
-import { IconClock, IconMail, IconPhone, IconPin, Logomark, socialIcons } from "@/components/icons";
+import { IconClock, IconMail, IconPhone, IconPin, socialIcons } from "@/components/icons";
 import { Container } from "@/components/ui";
 
 export function SiteFooter() {
   return (
     <footer className="relative overflow-hidden bg-carbon-950 text-carbon-300">
       <div aria-hidden className="absolute inset-0 bg-blueprint opacity-60" />
-      <div
-        aria-hidden
-        className="absolute -top-40 left-1/2 h-80 w-[70rem] -translate-x-1/2 rounded-full bg-moss-500/10 blur-3xl"
-      />
 
       <Container className="relative">
         <div className="grid gap-12 border-b border-white/10 py-16 lg:grid-cols-12 lg:gap-8 lg:py-20">
           <div className="lg:col-span-4">
             <Link href="/" className="flex items-center gap-3" aria-label={`${site.shortName} — home`}>
-              <Logomark className="size-11 shrink-0" />
+              <Image
+                src="/logos/logo.png"
+                alt=""
+                aria-hidden
+                width={234}
+                height={231}
+                className="size-11 shrink-0 object-contain"
+              />
               <span className="leading-tight">
                 <span className="block font-display text-lg font-semibold tracking-tight text-white">
                   ECOHYGIENE

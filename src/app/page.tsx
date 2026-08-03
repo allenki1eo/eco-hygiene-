@@ -43,12 +43,7 @@ export default function HomePage() {
     <>
       {/* ---------------------------------------------------------------- Hero */}
       <section className="relative isolate overflow-hidden bg-carbon-950">
-        <div aria-hidden className="absolute inset-0 bg-aurora" />
         <div aria-hidden className="absolute inset-0 bg-blueprint opacity-60" />
-        <div
-          aria-hidden
-          className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-b from-transparent to-carbon-950"
-        />
 
         <Container className="relative">
           <div className="grid items-center gap-14 py-16 sm:py-20 lg:grid-cols-12 lg:gap-8 lg:py-24">
@@ -158,10 +153,6 @@ export default function HomePage() {
       {/* -------------------------------------------------------------- Why us */}
       <section className="relative overflow-hidden bg-carbon-950 py-20 sm:py-28">
         <div aria-hidden className="absolute inset-0 bg-blueprint opacity-50" />
-        <div
-          aria-hidden
-          className="absolute -left-40 top-1/4 size-[36rem] rounded-full bg-hydro-500/10 blur-3xl"
-        />
         <Container className="relative">
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-10">
             <div className="lg:col-span-5">
@@ -239,10 +230,6 @@ export default function HomePage() {
       {/* ------------------------------------------------------- Eco commitment */}
       <section className="relative overflow-hidden bg-carbon-900 py-20 sm:py-28">
         <div aria-hidden className="absolute inset-0 bg-blueprint opacity-40" />
-        <div
-          aria-hidden
-          className="absolute -right-32 -bottom-32 size-[34rem] rounded-full bg-moss-500/12 blur-3xl"
-        />
         <Container className="relative">
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-6">

@@ -83,10 +83,6 @@ export default function CompanyPage() {
       {/* -------------------------------------------------------------- Values */}
       <section className="relative overflow-hidden bg-carbon-950 py-20 sm:py-28">
         <div aria-hidden className="absolute inset-0 bg-blueprint opacity-50" />
-        <div
-          aria-hidden
-          className="absolute -right-40 top-10 size-[34rem] rounded-full bg-moss-500/10 blur-3xl"
-        />
         <Container className="relative">
           <SectionHeading
             dark

@@ -40,7 +40,6 @@ export function ServiceCard({ service, delay = 0 }: { service: Service; delay?: 
             />
           ) : (
             <>
-              <div aria-hidden className="absolute inset-0 bg-aurora opacity-90" />
               <div aria-hidden className="absolute inset-0 bg-blueprint opacity-60" />
               {/* Oversized, cropped watermark — decorative, so it does not
                   read as a duplicate of the icon chip below it. */}
@@ -246,7 +245,6 @@ export function CtaBand({
 }) {
   return (
     <section className="relative overflow-hidden bg-carbon-950 py-20 sm:py-28">
-      <div aria-hidden className="absolute inset-0 bg-aurora opacity-90" />
       <div aria-hidden className="absolute inset-0 bg-blueprint opacity-50" />
       <Container className="relative">
         <div className="reveal mx-auto max-w-3xl text-center">
@@ -286,12 +284,7 @@ export function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-carbon-950 pt-16 pb-20 sm:pt-24 sm:pb-28">
-      <div aria-hidden className="absolute inset-0 bg-aurora opacity-80" />
       <div aria-hidden className="absolute inset-0 bg-blueprint opacity-50" />
-      <div
-        aria-hidden
-        className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-b from-transparent to-carbon-950"
-      />
       <Container className="relative">
         <div className="max-w-3xl">
           <Eyebrow tone="moss" className="text-moss-300">

@@ -41,25 +41,36 @@ export default async function ServiceDetailPage({ params }: Params) {
   const isMoss = service.accent === "moss";
   const accent = {
     text: isMoss ? "text-moss-300" : "text-hydro-300",
+    /** One stop lighter, for text sitting over the banner photograph. */
+    textOnBanner: isMoss ? "text-moss-200" : "text-hydro-200",
     chip: isMoss ? "bg-moss-400/12 text-moss-300" : "bg-hydro-400/12 text-hydro-300",
-    glow: isMoss ? "bg-moss-500/12" : "bg-hydro-500/12",
     rule: isMoss ? "bg-moss-500" : "bg-hydro-500",
   };
 
   return (
     <>
       {/* ---------------------------------------------------------------- Hero */}
-      <section className="relative overflow-hidden bg-carbon-950 pt-10 pb-20 sm:pt-14 sm:pb-28">
-        <div aria-hidden className="absolute inset-0 bg-aurora opacity-80" />
-        <div aria-hidden className="absolute inset-0 bg-blueprint opacity-50" />
-        <div
-          aria-hidden
-          className={cx("absolute -right-40 top-0 size-[32rem] rounded-full blur-3xl", accent.glow)}
-        />
+      <section className="relative isolate overflow-hidden bg-carbon-950 pt-12 pb-20 sm:pt-16 sm:pb-28 lg:pt-20 lg:pb-32">
+        {/* The photograph is the banner: full-bleed behind the whole hero. */}
+        {service.image && (
+          <Image
+            src={service.image.src}
+            alt=""
+            aria-hidden
+            fill
+            priority
+            sizes="100vw"
+            className="-z-20 object-cover"
+          />
+        )}
+        {/* Flat wash rather than a gradient — heavy enough that white text
+            clears AA over the brightest part of any of these photos. */}
+        <div aria-hidden className="absolute inset-0 -z-10 bg-carbon-950/78" />
+        <div aria-hidden className="absolute inset-0 -z-10 bg-blueprint opacity-40" />
 
         <Container className="relative">
           <nav aria-label="Breadcrumb" className="mb-10">
-            <ol className="flex flex-wrap items-center gap-2 text-xs text-carbon-300">
+            <ol className="flex flex-wrap items-center gap-2 text-xs text-carbon-200">
               <li>
                 <Link href="/" className="transition hover:text-white">
                   Home
@@ -78,8 +89,8 @@ export default async function ServiceDetailPage({ params }: Params) {
             </ol>
           </nav>
 
-          <div className="grid gap-12 lg:grid-cols-12 lg:items-center lg:gap-12">
-            <div className={service.image ? "lg:col-span-6" : "lg:col-span-8"}>
+          <div className="grid gap-12 lg:grid-cols-12">
+            <div className="lg:col-span-8">
               <div className="flex items-center gap-4">
                 <span
                   className={cx(
@@ -89,7 +100,7 @@ export default async function ServiceDetailPage({ params }: Params) {
                 >
                   <Icon className="size-7" />
                 </span>
-                <span className="font-mono text-xs tracking-[0.2em] text-carbon-300">
+                <span className="font-mono text-xs tracking-[0.2em] text-carbon-200">
                   SERVICE {service.index}
                 </span>
               </div>
@@ -97,11 +108,11 @@ export default async function ServiceDetailPage({ params }: Params) {
               <h1 className="mt-8 text-4xl leading-[1.06] text-white sm:text-5xl lg:text-[3.25rem]">
                 {service.name}
               </h1>
-              <p className={cx("mt-6 text-lg font-medium", accent.text)}>{service.tagline}</p>
+              <p className={cx("mt-6 text-lg font-medium", accent.textOnBanner)}>{service.tagline}</p>
 
               <div className="mt-8 space-y-5 border-l-2 border-white/10 pl-6">
                 {service.intro.map((paragraph) => (
-                  <p key={paragraph} className="text-[0.9375rem] leading-relaxed text-carbon-300">
+                  <p key={paragraph} className="text-[0.9375rem] leading-relaxed text-carbon-200">
                     {paragraph}
                   </p>
                 ))}
@@ -111,28 +122,6 @@ export default async function ServiceDetailPage({ params }: Params) {
                 Request a Quote
               </ButtonLink>
             </div>
-
-            {service.image && (
-              <Reveal delay={140} className="lg:col-span-6">
-                <figure className="relative overflow-hidden rounded-3xl ring-1 ring-white/12">
-                  <Image
-                    src={service.image.src}
-                    alt={service.image.alt}
-                    width={service.image.width}
-                    height={service.image.height}
-                    priority
-                    sizes="(min-width: 1024px) 560px, 100vw"
-                    className="aspect-[4/3] w-full object-cover"
-                  />
-                  {/* Ties the photo into the dark hero instead of leaving it
-                      floating as a bright rectangle. */}
-                  <div
-                    aria-hidden
-                    className="absolute inset-0 bg-gradient-to-t from-carbon-950/45 via-transparent to-transparent"
-                  />
-                </figure>
-              </Reveal>
-            )}
           </div>
         </Container>
       </section>
@@ -205,10 +194,6 @@ export default async function ServiceDetailPage({ params }: Params) {
       {/* ----------------------------------------------------------- Eco angle */}
       <section className="relative overflow-hidden bg-carbon-900 py-20 sm:py-28">
         <div aria-hidden className="absolute inset-0 bg-blueprint opacity-40" />
-        <div
-          aria-hidden
-          className={cx("absolute -left-32 bottom-0 size-[30rem] rounded-full blur-3xl", accent.glow)}
-        />
         <Container className="relative">
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-6">

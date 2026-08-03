@@ -59,7 +59,6 @@ export default function ServicesPage() {
                           />
                         ) : (
                           <>
-                            <div aria-hidden className="absolute inset-0 bg-aurora opacity-90" />
                             <div aria-hidden className="absolute inset-0 bg-blueprint opacity-60" />
                           </>
                         )}

@@ -236,31 +236,3 @@ export const socialIcons: Record<string, (props: IconProps) => React.JSX.Element
   instagram: IconInstagram,
   whatsapp: IconWhatsapp,
 };
-
-/** Ecohygiene mark: a droplet enclosing a leaf, drawn from the brand palette. */
-export function Logomark({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 40 40" className={className} aria-hidden fill="none">
-      <defs>
-        <linearGradient id="eh-mark" x1="6" y1="4" x2="34" y2="36" gradientUnits="userSpaceOnUse">
-          <stop stopColor="var(--color-moss-400)" />
-          <stop offset="1" stopColor="var(--color-hydro-400)" />
-        </linearGradient>
-      </defs>
-      <rect width="40" height="40" rx="11" fill="url(#eh-mark)" />
-      <path
-        d="M20 8.5s8.6 9 8.6 14.6a8.6 8.6 0 1 1-17.2 0C11.4 17.5 20 8.5 20 8.5Z"
-        fill="var(--color-carbon-950)"
-        fillOpacity="0.22"
-      />
-      <path
-        d="M14.6 26.4c-1-3.4.6-8.2 6.2-10.1 1.8-.6 3.8-.7 5.3-.7.1 1.8 0 4-.9 6-1.6 4-5.6 5.4-8.4 4.6"
-        stroke="white"
-        strokeWidth="1.7"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path d="M14.2 27.6c2.1-3.4 4.7-6 8.2-7.7" stroke="white" strokeWidth="1.7" strokeLinecap="round" />
-    </svg>
-  );
-}
