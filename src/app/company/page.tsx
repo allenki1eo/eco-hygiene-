@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { complianceNotes, contact, site, values } from "@/lib/site";
 import { CtaBand, PageHero, PartnerStrip, StatStrip } from "@/components/sections";
+import { TeamOrg } from "@/components/team-org";
 import { ButtonLink, Container, Reveal, SectionHeading } from "@/components/ui";
 import { IconLeaf, IconShield, IconUsers } from "@/components/icons";
 
@@ -133,6 +134,9 @@ export default function CompanyPage() {
           </Reveal>
         </Container>
       </section>
+
+      {/* ---------------------------------------------------------------- Team */}
+      <TeamOrg />
 
       {/* ------------------------------------------------------------- Culture */}
       <section className="bg-white py-20 sm:py-28">

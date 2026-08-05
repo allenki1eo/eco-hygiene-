@@ -46,6 +46,7 @@ src/
     globals.css               Design tokens and shared component classes
   components/
     site-header.tsx           Sticky header + mobile drawer
+    team-org.tsx              Company structure section on /company
     site-footer.tsx           Footer
     sections.tsx              Service cards, stats, partners, CTA band, page hero
     ui.tsx                    Container, buttons, section headings, Reveal
@@ -56,6 +57,7 @@ src/
   lib/
     site.ts                   Company facts, contact details, values, guarantees
     services.ts               All service copy
+    team.ts                   Org structure for the team section
 ```
 
 ### Editing content
@@ -206,12 +208,17 @@ These items are placeholders or need confirmation from the directors:
    with a photograph of an actual Ecohygiene pest control job would remove the
    copyright exposure and read as Ecohygiene's own work; drop the replacement in
    at the same path and nothing else needs changing.
-5. **Social links** (`src/lib/site.ts` → `social`) — currently point at the
+5. **Team names and headshots** (`src/lib/team.ts`, photos in `public/team/`) —
+   the team section lists roles and responsibilities, with no staff names,
+   because none were supplied and inventing them for a real company is not
+   something to publish. Both `name` and `photo` are optional per role and the
+   card adapts to whichever you provide. See `public/team/README.md`.
+6. **Social links** (`src/lib/site.ts` → `social`) — currently point at the
    platforms' home pages. Swap in the real profiles or remove the entries.
-6. **Map coordinates** (`src/lib/site.ts` → `contact.geo`) — approximate for Sido,
+7. **Map coordinates** (`src/lib/site.ts` → `contact.geo`) — approximate for Sido,
    Shinyanga. Confirm the exact plot location.
-7. **Contact form delivery** — see above; nothing is emailed until it is wired up.
-8. **`NEXT_PUBLIC_SITE_URL`** — set to the live domain so canonical URLs, the
+8. **Contact form delivery** — see above; nothing is emailed until it is wired up.
+9. **`NEXT_PUBLIC_SITE_URL`** — set to the live domain so canonical URLs, the
    sitemap and the social card resolve correctly.
 
 ---
