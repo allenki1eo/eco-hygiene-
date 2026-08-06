@@ -113,12 +113,9 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 py-7 text-xs text-carbon-300 sm:flex-row sm:items-center sm:justify-between">
+        <div className="py-7 text-xs text-carbon-300">
           <p>
             © {new Date().getFullYear()} {site.name}. All rights reserved.
-          </p>
-          <p className="font-mono tracking-wide uppercase">
-            Eco-friendly hygiene &amp; environmental solutions · {contact.address.city}, {contact.address.country}
           </p>
         </div>
       </Container>
