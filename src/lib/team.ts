@@ -5,8 +5,8 @@
  * the structure is true whether or not a name has been supplied yet, so the
  * section looks finished from day one and stays correct as people change.
  *
- * ⚠ No real staff names are recorded here. Add them as you confirm them, and
- * headshots alongside. Both are optional and the card adapts:
+ * Add confirmed staff names and headshots as they become available. Both are
+ * optional and the card adapts:
  *
  *   {
  *     role: "Managing Director",
@@ -59,14 +59,18 @@ export const orgTiers: OrgTier[] = [
     blurb: "Accountable for the standard the company is held to, and reachable when it matters.",
     members: [
       {
-        role: "Managing Director",
+        role: "Chief Executive Officer",
+        name: "Aniset Anton Nyaki",
+        photo: { src: "/team/aniset-anton-nyaki.svg", width: 900, height: 900 },
         focus:
           "Owns client relationships and commercial terms. The escalation point when a plant needs a decision made at pace.",
         email: contact.email,
         icon: IconShield,
       },
       {
-        role: "Technical Director",
+        role: "Director General",
+        name: "Joyce Bathlome Mushi",
+        photo: { src: "/team/joyce-bathlome-mushi.svg", width: 900, height: 900 },
         focus:
           "Signs off chemistry, method statements and effluent programmes. Answerable for what we put on your surfaces and into your drains.",
         email: contact.email,
